@@ -27,8 +27,8 @@ body {
   height: 100%;
   z-index: -1;
   background-color: #3D9365;
-  background-image: url('svg/bg_tile.svg');
-  background-size: 180px 254.56px;
+  background-image: url('images/background.png');
+  background-size: 600px auto;
   background-position: top left;
   background-repeat: repeat;
 }
