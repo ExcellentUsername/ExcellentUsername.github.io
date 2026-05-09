@@ -1,8 +1,432 @@
-html, body {
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-canvas {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cutive Mono', monospace;
+  color: #FFFFFF;
+  background-color: #3a7a52;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Background Pattern ── */
+.bg-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+/* ── Navigation ── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 28px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(58, 122, 82, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #E5C13C;
+}
+
+/* ── Main Content ── */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* ── Section Title Banner ── */
+.section-title {
+  background: rgba(58, 122, 82, 0.55);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin: 24px 0 32px;
+  text-align: center;
+}
+
+.section-title h1 {
+  color: #E5C13C;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.section-title .subtitle {
+  color: #E5C13C;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  margin-top: 4px;
+}
+
+/* ── Hero (Home page) ── */
+.hero {
+  background: rgba(58, 122, 82, 0.55);
+  border-radius: 12px;
+  padding: 48px 32px 40px;
+  margin: 24px 0 48px;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #E5C13C;
+  font-size: 2.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.hero .tagline {
+  color: #E5C13C;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* ── Project Buttons (Home) ── */
+.projects-section {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.projects-section h2 {
+  color: #E5C13C;
+  font-size: 1.8rem;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.project-btn {
+  display: inline-block;
+  background: rgba(170, 150, 50, 0.65);
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 0.85rem;
+  transition: background 0.25s ease, transform 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.project-btn:hover {
+  background: rgba(210, 185, 50, 0.85);
+  transform: translateY(-1px);
+}
+
+/* ── Footer ── */
+footer {
+  background: rgba(40, 90, 60, 0.75);
+  padding: 28px 28px;
+  margin-top: auto;
+}
+
+footer h3 {
+  color: #E5C13C;
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+footer .email {
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  user-select: all;
+  cursor: text;
+}
+
+/* ── About Page ── */
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: rgba(58, 122, 82, 0.55);
+  border-radius: 12px;
+  padding: 32px;
+  margin: 24px 0 32px;
+  flex-wrap: wrap;
+}
+
+.about-header h1 {
+  color: #E5C13C;
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.about-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-left: auto;
+}
+
+.about-text {
+  background: rgba(58, 122, 82, 0.35);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 32px;
+  line-height: 1.8;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Content Cards (used across pages) ── */
+.content-card {
+  background: rgba(58, 122, 82, 0.4);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.content-card h2 {
+  color: #E5C13C;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content-card h3 {
+  color: #E5C13C;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* ── Image Grids ── */
+.logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.logo-grid img,
+.logo-grid object {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.single-image {
+  width: 100%;
+  border-radius: 8px;
   display: block;
+  margin: 0 auto;
+}
+
+.gallery-image {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.gallery-image:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Video Games Page ── */
+.game-entry {
+  background: rgba(58, 122, 82, 0.4);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.game-entry h2 {
+  color: #E5C13C;
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  margin-bottom: 20px;
+}
+
+.game-entry img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.game-entry .github-link {
+  display: inline-block;
+  color: #E5C13C;
+  text-decoration: underline;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  font-family: 'Cutive Mono', monospace;
+}
+
+.game-entry .github-link:hover {
+  color: #fff;
+}
+
+.game-entry p {
+  text-align: left;
+  line-height: 1.7;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+}
+
+/* ── TTRPG Page ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.card-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ── Prints Page ── */
+.print-image {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.print-image:last-child {
+  margin-bottom: 0;
+}
+
+/* ── SVG embed ── */
+.svg-embed {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .tagline {
+    font-size: 0.82rem;
+  }
+
+  .section-title h1 {
+    font-size: 1.5rem;
+  }
+
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-photo {
+    margin-left: 0;
+    width: 140px;
+    height: 140px;
+  }
+
+  .project-btn {
+    font-size: 0.78rem;
+    padding: 10px 20px;
+  }
+
+  nav {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 0 14px 32px;
+  }
+}
+
+@media (min-width: 801px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .section-title h1 {
+    font-size: 2.4rem;
+  }
 }
