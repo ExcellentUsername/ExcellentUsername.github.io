@@ -28,9 +28,9 @@ body {
   z-index: -1;
   background-color: #3D9365;
   background-image: url('images/background.png');
-  background-size: 600px auto;
+  background-size: 100.1% auto;
   background-position: top left;
-  background-repeat: repeat;
+  background-repeat: repeat-y;
 }
 
 nav {
