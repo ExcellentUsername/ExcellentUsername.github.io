@@ -33,6 +33,13 @@ body {
   background-repeat: repeat-y;
 }
 
+@media (min-width: 721px) {
+  .bg-pattern {
+    background-size: 720px auto;
+    background-repeat: repeat;
+  }
+}
+
 nav {
   display: flex;
   justify-content: space-between;
