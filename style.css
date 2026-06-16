@@ -370,7 +370,7 @@ footer .email {
 /* ── Mobile ── */
 @media (max-width: 800px) {
   .bg-pattern {
-    background-size: 50px auto;
+    background-size: 25px auto;
   }
 
   .hero h1 {
@@ -400,8 +400,8 @@ footer .email {
   }
 
   nav {
-    padding: 24px 28px;
-    font-size: 2rem;
+    padding: 20px 24px;
+    font-size: 1.5rem;
   }
 
   main {
