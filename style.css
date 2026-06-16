@@ -27,10 +27,10 @@ body {
   height: 100%;
   z-index: -1;
   background-color: #3D9365;
-  background-image: url('images/background.png');
-  background-size: 100.1% auto;
+  background-image: url('svg/background_tile.svg');
+  background-size: 90px auto;       /* one tile; scales crisply since it's vector */
   background-position: top left;
-  background-repeat: repeat-y;
+  background-repeat: repeat;
 }
 
 nav {
@@ -407,6 +407,10 @@ footer .email {
 
 /* ── Desktop ── */
 @media (min-width: 801px) {
+  .bg-pattern {
+    background-size: 60px auto;
+  }
+
   .hero h1 {
     font-size: 3.2rem;
   }
@@ -466,7 +470,7 @@ footer .email {
   }
 
   nav {
-    font-size: 1.1rem;
+    font-size: 1.8rem;
     padding: 18px 40px;
   }
 
