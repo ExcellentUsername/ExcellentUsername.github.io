@@ -181,8 +181,12 @@ footer .email {
   color: #FFFFFF;
   font-size: 0.9rem;
   letter-spacing: 0.04em;
-  user-select: all;
+  user-select: text;
   cursor: text;
+}
+
+footer .email:hover {
+  color: #E5C13C;
 }
 
 .about-header {
