@@ -368,7 +368,11 @@ footer .email {
 }
 
 /* ── Mobile ── */
-@media (max-width: 1200px) {
+@media (max-width: 800px) {
+  .bg-pattern {
+    background-size: 50px auto;
+  }
+
   .hero h1 {
     font-size: 1.8rem;
   }
@@ -396,8 +400,8 @@ footer .email {
   }
 
   nav {
-    padding: 12px 20px;
-    font-size: 1.8rem;
+    padding: 24px 28px;
+    font-size: 2rem;
   }
 
   main {
