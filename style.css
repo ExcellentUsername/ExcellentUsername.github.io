@@ -368,7 +368,7 @@ footer .email {
 }
 
 /* ── Mobile ── */
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .hero h1 {
     font-size: 1.8rem;
   }
@@ -397,7 +397,7 @@ footer .email {
 
   nav {
     padding: 12px 20px;
-    font-size: 0.9rem;
+    font-size: 1.8rem;
   }
 
   main {
